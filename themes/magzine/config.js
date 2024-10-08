@@ -1,6 +1,6 @@
 const CONFIG = {
   // 首屏信息栏按钮文字
-  MAGZINE_HOME_BANNER_ENABLE: true, // 首屏右上角的宣传位
+  MAGZINE_HOME_BANNER_ENABLE: false, // 首屏右上角的宣传位
   MAGZINE_HOME_BUTTON: true,
   MAGZINE_HOME_BUTTON_URL: '/about',
   MAGZINE_HOME_BUTTON_TEXT: '了解更多',
@@ -30,7 +30,7 @@ const CONFIG = {
   MAGZINE_POST_DETAIL_TAG: true, // 文章显示标签
 
   // 文章页面联系卡
-  MAGZINE_SOCIAL_CARD: true, // 是否显示右侧，点击加入社群按钮
+  MAGZINE_SOCIAL_CARD: false, // 是否显示右侧，点击加入社群按钮
   MAGZINE_SOCIAL_CARD_TITLE_1: '交流频道',
   MAGZINE_SOCIAL_CARD_TITLE_2: '加入社群讨论分享',
   MAGZINE_SOCIAL_CARD_TITLE_3: '点击加入社群',
@@ -39,67 +39,47 @@ const CONFIG = {
   // 页脚菜单
   MAGZINE_FOOTER_LINKS: [
     {
-      name: '友情链接',
+      name: '作品',
       menus: [
         {
-          title: 'Tangly的学习笔记',
-          href: 'https://blog.tangly1024.com'
+          title: '《易·跟打》',
+          href: 'https://typer.owenyang.top/portal'
         },
         {
-          title: 'NotionNext',
-          href: 'https://www.tangly1024.com'
+          title: '《易·阅读》',
+          href: 'https://yuedu.owenyang.top'
         }
       ]
     },
     {
       name: '开发者',
       menus: [
-        { title: 'Github', href: 'https://github.com/tangly1024/NotionNext' },
         {
-          title: '开发帮助',
-          href: 'https://docs.tangly1024.com/article/how-to-develop-with-notion-next'
+          title: '主站',
+          href: 'https://owenyang.top'
         },
-        {
-          title: '功能反馈',
-          href: 'https://github.com/tangly1024/NotionNext/issues/new/choose'
-        },
-        {
-          title: '技术讨论',
-          href: 'https://github.com/tangly1024/NotionNext/discussions'
-        },
+        { title: 'Github', href: 'https://github.com/owenyang0' },
         {
           title: '关于作者',
-          href: 'https://blog.tangly1024.com/about'
+          href: 'https://owenyang.top/about'
         }
       ]
     },
     {
-      name: '支持',
+      name: '木易跟打器',
       menus: [
         {
-          title: '站长社群',
-          href: 'https://docs.tangly1024.com/article/chat-community'
+          title: '开始跟打',
+          href: 'https://typer.owenyang.top'
         },
         {
-          title: '咨询与定制',
-          href: 'https://docs.tangly1024.com/article/my-service'
+          title: '快速上手',
+          href: 'https://typer.owenyang.top/help'
         },
         {
-          title: '升级手册',
-          href: 'https://docs.tangly1024.com/article/my-service'
-        },
-        {
-          title: '安装教程',
-          href: 'https://docs.tangly1024.com/article/how-to-update-notionnext'
-        },
-        { title: 'SEO推广', href: 'https://seo.tangly1024.com/' }
-      ]
-    },
-    {
-      name: '解决方案',
-      menus: [
-        { title: '建站工具', href: 'https://www.tangly1024.com/' },
-        { title: 'NotionNext', href: 'https://docs.tangly1024.com/about' }
+          title: '🍺 Buy Me a Coffee',
+          href: 'https://typer.owenyang.top/buy-me-a-coffee'
+        }
       ]
     }
   ],
