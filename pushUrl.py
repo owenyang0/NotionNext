@@ -10,7 +10,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 
 # 每日推送限额，可根据实际情况修改
-QUOTA = 10
+QUOTA = 3
 
 
 def parse_stiemap(site):
@@ -46,7 +46,7 @@ def push_to_bing(site, urls, api_key):
         print("An error occurred:", e)
 
 
-def push_to_baidu(site, urls, token):
+def push_to_baidu(site, urls, token, bark_token):
     api_url = f"http://data.zz.baidu.com/urls?site={site}&token={token}"
 
     payload = "\n".join(urls)
@@ -56,9 +56,13 @@ def push_to_baidu(site, urls, token):
         response = requests.post(api_url, data=payload, headers=headers)
         result = response.json()
         if "success" in result and result["success"]:
-            print("成功推送到百度.")
+            print("成功推送url到百度.")
+            bark_url = f"https://api.day.app/{bark_token}/blog.owenyang.top/✅成功url推送到百度."
+            requests.get(bark_url)
         elif "error" in result:
-            print("推送到百度出现错误，错误信息为：", result["message"])
+            print("推送url到百度出现错误，错误信息为：", result["message"])
+            bark_url = f"https://api.day.app/{bark_token}/blog.owenyang.top/❌推送url失败{result['message']}"
+            requests.get(bark_url)
         else:
             print("Unknown response from Baidu:", result)
     except Exception as e:
@@ -70,6 +74,7 @@ if __name__ == '__main__':
     parser.add_argument('--url', type=str, default=None, help='The url of your website')
     parser.add_argument('--bing_api_key', type=str, default=None, help='your bing api key')
     parser.add_argument('--baidu_token', type=str, default=None, help='Your baidu push token')
+    parser.add_argument('--bark_token', type=str, default=None, help='Your bark push token')
     args = parser.parse_args()
 
     # 获取当前的时间戳作为随机种子
@@ -90,7 +95,7 @@ if __name__ == '__main__':
             # 推送百度
             if args.baidu_token:
                 print('正在推送至百度，请稍后……')
-                push_to_baidu(args.url, urls, args.baidu_token)
+                push_to_baidu(args.url, urls, args.baidu_token, args.bark_token)
     else:
         print('请前往 Github Action Secrets 配置 URL')
         print('详情参见: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
