@@ -73,8 +73,12 @@ const CONFIG = {
           href: 'https://typer.owenyang.top'
         },
         {
-          title: '快速上手',
+          title: '👊 快速上手',
           href: 'https://typer.owenyang.top/help'
+        },
+        {
+          title: '☀ 常见问题FAQ',
+          href: '/easy-typer-faq'
         },
         {
           title: '🍺 Buy Me a Coffee',
