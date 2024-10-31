@@ -55,12 +55,12 @@ const CONFIG = {
       name: '开发者',
       menus: [
         {
-          title: '主站',
+          title: '💫 主站',
           href: 'https://owenyang.top'
         },
-        { title: 'Github', href: 'https://github.com/owenyang0' },
+        { title: '🎈 Github', href: 'https://github.com/owenyang0' },
         {
-          title: '关于作者',
+          title: '🎗 关于作者',
           href: 'https://owenyang.top/about'
         }
       ]
@@ -69,7 +69,7 @@ const CONFIG = {
       name: '木易跟打器',
       menus: [
         {
-          title: '开始跟打',
+          title: '🎉 开始跟打',
           href: 'https://typer.owenyang.top'
         },
         {
@@ -77,12 +77,12 @@ const CONFIG = {
           href: 'https://typer.owenyang.top/help'
         },
         {
-          title: '☀ 常见问题FAQ',
+          title: '💥 常见问题FAQ',
           href: '/easy-typer-faq'
         },
         {
           title: '🍺 Buy Me a Coffee',
-          href: 'https://typer.owenyang.top/buy-me-a-coffee'
+          href: '/buy-me-a-coffee'
         }
       ]
     }
