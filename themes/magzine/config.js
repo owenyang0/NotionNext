@@ -42,11 +42,11 @@ const CONFIG = {
       name: '作品',
       menus: [
         {
-          title: '《易·跟打》',
+          title: '🎉《易·跟打》',
           href: 'https://typer.owenyang.top/portal'
         },
         {
-          title: '《易·阅读》',
+          title: '🍺《易·阅读》',
           href: 'https://yuedu.owenyang.top'
         }
       ]
