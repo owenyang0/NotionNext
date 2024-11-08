@@ -58,7 +58,7 @@ const CONFIG = {
           title: '💫 主站',
           href: 'https://owenyang.top'
         },
-        { title: '🎈 Github', href: 'https://github.com/owenyang0' },
+        { title: '📮 Github', href: 'https://github.com/owenyang0' },
         {
           title: '🎗 关于作者',
           href: 'https://owenyang.top/about'
