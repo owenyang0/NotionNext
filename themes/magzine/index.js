@@ -220,17 +220,17 @@ const LayoutSlug = props => {
                 {/* meta信息 */}
                 <section className='text-lg gap-y-6 text-center lg:text-left'>
                   <div className='text-gray-500 py-1 dark:text-gray-600 '>
-                    {/* <div className='whitespace-nowrap'>
+                    <div className='whitespace-nowrap mr-2'>
                       <i className='far fa-calendar mr-2' />
-                      {post?.publishDay}
-                    </div> */}
+                      发布于 {post?.publishDay}
+                    </div>
                     <div className='whitespace-nowrap mr-2'>
                       <i className='far fa-calendar-check mr-2' />
-                      {post?.lastEditedDay}
+                      修改于 {post?.lastEditedDay}
                     </div>
                     <div className='hidden busuanzi_container_page_pv  mr-2 whitespace-nowrap'>
                       <i className='mr-1 fas fa-fire' />
-                      <span className='busuanzi_value_page_pv' />
+                      访问量 <span className='busuanzi_value_page_pv' />
                     </div>
                   </div>
                 </section>
