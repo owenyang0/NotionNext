@@ -34,5 +34,5 @@ jobs:
       - 
         name: Status Push
         run: |
-          curl https://api.day.app/${{ secrets.PUSH_TOKEN }}/actions:easy-typer-server/✅构建成功?icon=https://static.owenyang.top/blogs/avatar.jpg
+          curl https://api.day.app/${{ secrets.PUSH_TOKEN }}/actions:notion-next-blog/✅构建成功?icon=https://static.owenyang.top/blogs/avatar.jpg
           curl https://bt.owenyang.top/hook?access_key=${{ secrets.HOOK_TOKEN }}&param=notion-next-blog
