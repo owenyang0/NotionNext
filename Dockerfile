@@ -19,6 +19,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --production --frozen-lockfile
 COPY --from=builder /app/.next ./.next
+COPY . .
 
 
 ENV NODE_ENV production
