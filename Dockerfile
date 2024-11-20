@@ -18,6 +18,8 @@ FROM node:lts-alpine AS production
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --production --frozen-lockfile
+RUN yarn cache clean --force
+
 COPY --from=builder /app/.next ./.next
 COPY . .
 
