@@ -28,7 +28,6 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-
 COPY --from=builder /app/public ./public
 
 # Automatically leverage output traces to reduce image size
@@ -36,7 +35,7 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-# 个人仓库可以把将配置好的.env.local文件放到项目根目录，可自动使用环境变量
+# 个人仓库把将配置好的.env.local文件放到项目根目录，可自动使用环境变量
 COPY --from=builder /app/.env.local ./
 
 EXPOSE 3000
