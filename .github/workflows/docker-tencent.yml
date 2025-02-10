@@ -1,10 +1,11 @@
 name: Build docker and push to deploy
 
 on:
-  push:
-    branches:
-      - deploy
-
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Docker image version'
+        required: true
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -24,15 +25,13 @@ jobs:
       -
         name: 构建镜像
         run: |
-          docker build --file Dockerfile --tag ccr.ccs.tencentyun.com/owenyang/notion-next:latest .
+          docker build --file Dockerfile --tag ccr.ccs.tencentyun.com/owenyang/notion-next:${{ github.event.inputs.version }} --tag ccr.ccs.tencentyun.com/owenyang/notion-next:latest .
       - name: 把构建好的镜像推送到腾讯仓库
-        run: docker push ccr.ccs.tencentyun.com/owenyang/notion-next:latest
-        # uses: docker/build-push-action@v5
-        # with:
-        #   push: true
-        #   tags: ccr.ccs.tencentyun.com/owenyang/notion-next:latest
+        run: |
+          docker push ccr.ccs.tencentyun.com/owenyang/notion-next:${{ github.event.inputs.version }}
+          docker push ccr.ccs.tencentyun.com/owenyang/notion-next:latest
       - 
         name: Status Push
         run: |
-          curl https://api.day.app/${{ secrets.PUSH_TOKEN }}/actions:notion-next-blog/✅构建成功?icon=https://static.owenyang.top/blogs/avatar.jpg
-          curl https://bt.owenyang.top/hook?access_key=${{ secrets.HOOK_TOKEN }}&param=notion-next-blog
+          curl https://api.day.app/${{ secrets.PUSH_TOKEN }}/actions:notion-next-blog/✅构建成功-版本${{ github.event.inputs.version }}?icon=https://static.owenyang.top/blogs/avatar.jpg
+          # curl https://bt.owenyang.top/hook?access_key=${{ secrets.HOOK_TOKEN }}&param=notion-next-blog
